@@ -1,11 +1,12 @@
-public class Solution {
-    public static void setZeros(int matrix[][]) {
-        /*-Brute:
+/*-Brute:
             1. Travese through each element of an array and check for element to be 0. 
             2. If zero mark the entire column as -1 and row as -1 for that i and j except for zeros.
             Note: If we change the array elements as zero then future iteration might be affected.
             3. Travese through each element of an array and check for element to be -1 and convert them to zero.
-        */
+*/
+public class Solution {
+    public static void setZeros(int matrix[][]) {
+        
         int N = matrix.length;
         int M = matrix[0].length;
 
@@ -43,3 +44,4 @@ public class Solution {
     }
 
 }
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
