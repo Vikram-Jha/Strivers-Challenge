@@ -80,3 +80,61 @@ public class Solution {
 
     }
 }
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/*
+            - Optimal:  TC: O(N*M) & SC: O(1)
+            1. Instead of taking dummy variable now my first row and first column will be used to mark rows and columns.
+            2. There is overlapping for martix[0][0] it will mark both column and row. So, lets take another variable to mark 1st column i.e col0.
+            3. Iterate from 0 to N in rows and 1 to M in columns. If element is zero mark the row as matrix[i][0] and the column as if as col0 and column[0][j] as 0.
+            4. Iterate from 1 to N in rows and 1 to M in columns again if matrix[0][j] or matrix[i][0] == 0 set the element zero.
+            5. Check for 1st row and column now. See column value is dependent on row. So, first column should be set. 
+            6. if matrix[0][0] then set first row as zero similarly if col0 is 0 set first column as zero.
+*/
+
+public class Solution {
+    public static void setZeros(int matrix[][]) {
+          
+        int N = matrix.length;
+        int M = matrix[0].length;
+
+        int col0 = 1;
+
+        for(int i=0; i<N; i++){
+            for(int j=0; j<M; j++){
+                if(matrix[i][j] == 0){
+                    //Mark row
+                    matrix[i][0] = 0;
+
+                    //Mark column
+                    if(j == 0)
+                        col0 =0;
+                    else
+                        matrix[0][j] = 0;
+                }
+            }
+        }
+
+        for(int i=1; i<N; i++){
+            for(int j=1; j<M; j++){
+                //Checking for row and column
+                if(matrix[i][0] == 0 || matrix[0][j] == 0){
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+
+        if(matrix[0][0] == 0){
+            for(int j=0; j<M; j++){
+                matrix[0][j] = 0;
+            }
+        }
+
+        if(col0 == 0){
+            for(int i=0; i<N; i++){
+                matrix[i][0] = 0;
+            }
+        }
+    }
+
+}
