@@ -7,5 +7,5 @@ It is a 60 days SDE Sheet Challenge which covers all concepts of Data Structutes
 SDE Sheet Link : https://takeuforward.org/interviews/strivers-sde-sheet-top-coding-interview-problems/
 <br>
 
-**#SdeSheetChallenge** 
-Check Rules/Prizes/All-Info of this challenge: [https://takeuforward.org/interviews/strivers-sde-sheet-challenge-2023/]
+**StriversSheetChallenge** 
+Check Rules/Prizes/All-Info of this challenge: [https://takeuforward.org/interviews/strivers-sde-sheet-challenge-2023/](https://takeuforward.org/interviews/strivers-sde-sheet-challenge-2023/)
