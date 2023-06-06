@@ -16,7 +16,7 @@
 
 //  1. Can be calculated using permutation n-1Cr-1 formula.  TC: 0(n) and SC: O(1)
 
-static int nCr(int n, int r){
+    static long nCr(int n, int r){
         // nCr = n! / r! (n-r)! = nCn-r = n!/(n-r)! (n-(n-r))! 
         // So, if r > n/2 then r should be n-r. Example: 10C7 then 7 > 5 that means 10C7 should be 10C3
         //Now, 10C3 = 10!/ 3! * 7! = 10 * 9 * 8 /3 * 2 * 1
@@ -27,7 +27,19 @@ static int nCr(int n, int r){
             res = res / (i + 1);
         }
         
-        return (int)res;
-}
+        return res;
+    }
 
-//  2. 
+//  2. (i) Naive way is to calculate each element of an row using formula and print the row.
+//          Since each row has exactly n elements --> Iterate from 1 to n and calculate element using n-1Cc-1. ex for 5th row 4C0 4C1 4C2 4C3 4C4
+
+    public static ArrayList<Long> nthRowArr(int n) {
+      ArrayList<Long> nthRow = new ArrayList<Long>();
+  
+      for (int c = 1; c <= n; c++) {
+        nthRow.add(nCr(n - 1, c - 1));
+      }
+      return nthRow;
+    }
+
+//    (ii)
