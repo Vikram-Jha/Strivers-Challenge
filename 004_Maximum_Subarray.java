@@ -1,6 +1,8 @@
 /*
-    Brute:
+    Brute: TC: O(n^3)  SC: O(1)
+    Using three for loops, we will get all possible subarrays in two loops and their sum in another loop, and then return the maximum of them.
 */
+
 
 /*
     Better:
