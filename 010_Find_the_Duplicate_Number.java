@@ -46,3 +46,38 @@ public class Solution{
         return reqNo;
     }
 }
+
+// Optimal: TC: O(N) & O(1)
+
+/*
+    Slow and fast pointer approach.
+    
+    1. If there is an duplicate element a cycle will be formed.
+    2. Move slow pointer by 1 and fast pointer by 2.
+    3. When slow == fast --> point fast at first element and inc. fast and slow by 1.
+    4. When slow == fast again then thats the repeacting element.
+    
+    
+    https://takeuforward.org/data-structure/find-the-duplicate-in-an-array-of-n1-integers/ --> See graph
+    
+    s,f
+      2   4   1    3    2     5      4  -> Draw on paint or copy to understant
+*/
+
+class Solution {
+    public int findDuplicate(int[] nums) {
+        int slow = nums[0];
+        int fast = nums[0];
+        do {
+            slow = nums[slow];
+            fast = nums[nums[fast]];
+        } while (slow != fast);
+
+        fast = nums[0];
+        while (slow != fast) {
+            slow = nums[slow];
+            fast = nums[fast];
+        }
+        return slow;
+    }
+}
