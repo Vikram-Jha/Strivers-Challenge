@@ -3,7 +3,7 @@
 */
 
     public static long maxSubarraySum(int[] arr, int n) {
-		long maxi = Integer.MIN_VALUE; 
+	long maxi = Integer.MIN_VALUE; 
 
         for (int i = 0; i < n; i++) {
             long sum = 0;
@@ -15,7 +15,7 @@
         }
 
         return maxi<0 ? 0: maxi;
-	}
+   }
 
 /*
     Optimal: TC: 0(N) & SC: O(1)
