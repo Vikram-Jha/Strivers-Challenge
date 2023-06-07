@@ -24,3 +24,26 @@
     }
 
 //Optimal: TC: O(N) & SC: O(1)
+
+/*
+  1. Take a variable which will store the subsequent minPrice and set it to max Positive value.
+  2. Take a variabe which wil store the maxProfit.
+  3. For i =0 - n if arr[i] < minPrice set minPrice = arr[i].
+  4. For each iteration check maxProfit > arr[i] - minPrice if yes set maxProfit as arr[i] - minPrice
+ */
+
+public class Solution{
+    public static int maximumProfit(ArrayList<Integer> prices){
+        int maxProfit = 0;
+        int minPrice = Integer.MAX_VALUE;
+
+        for(int i=0; i<prices.size(); i++){
+            minPrice = prices.get(i) < minPrice? prices.get(i) : minPrice;
+            maxProfit = (prices.get(i) - minPrice) > maxProfit ? 
+                        (prices.get(i) - minPrice) : maxProfit;
+        }
+
+
+        return maxProfit< 0 ? 0: maxProfit;
+    }
+}
