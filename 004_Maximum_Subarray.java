@@ -1,12 +1,21 @@
 /*
-    Brute: TC: O(n^3)  SC: O(1)
-    Using three for loops, we will get all possible subarrays in two loops and their sum in another loop, and then return the maximum of them.
+    Brute: TC: O(n^2)  SC: O(1)
 */
 
+    public static long maxSubarraySum(int[] arr, int n) {
+		long maxi = Integer.MIN_VALUE; 
 
-/*
-    Better:
-*/
+        for (int i = 0; i < n; i++) {
+            long sum = 0;
+            for (int j = i; j < n; j++){}
+                sum += arr[j];
+
+                maxi = Math.max(maxi, sum);
+            }
+        }
+
+        return maxi<0 ? 0: maxi;
+	}
 
 /*
     Optimal: TC: 0(N) & SC: O(1)
